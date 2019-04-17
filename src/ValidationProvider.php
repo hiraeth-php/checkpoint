@@ -16,10 +16,10 @@ class ValidationProvider implements Hiraeth\Provider
 	 * @access public
 	 * @return array A list of interfaces for which the provider operates
 	 */
-	static public function getInterfaces()
+	static public function getInterfaces(): array
 	{
 		return [
-			'Checkpoint\Validation'
+			Checkpoint\Validation::class
 		];
 	}
 
@@ -28,11 +28,13 @@ class ValidationProvider implements Hiraeth\Provider
 	 * Prepare the instance.
 	 *
 	 * @access public
-	 * @return Checkpoint\Validation The prepared instance
+	 * @var object $instance The unprepared instance of the object
+	 * @param Application $app The application instance for which the provider operates
+	 * @return object The prepared instance
 	 */
-	public function __invoke($instance, Hiraeth\Broker $broker)
+	public function __invoke(object $instance, Application $app): object
 	{
-		$instance->setValidator($broker->make('Respect\Validation\Validator'));
+		$instance->setValidator($app->get('Respect\Validation\Validator'));
 
 		return $instance;
 	}

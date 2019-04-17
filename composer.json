@@ -1,6 +1,6 @@
 {
     "name": "hiraeth/checkpoint",
-    "description": "Checkpoint for the Hiraeth Nano-Framework",
+    "description": "Validation via Checkpoint for the Hiraeth Nano-Framework",
     "license": "MIT",
     "authors": [
         {
@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+	"hiraeth/app": "^2.0",
         "imarc/checkpoint": "^1.3"
     },
     "autoload": {
@@ -19,7 +20,7 @@
     "extra": {
         "opus": {
             "hiraeth/app": {
-                "plugin/config": ""
+                "config": ""
             }
         }
     }
