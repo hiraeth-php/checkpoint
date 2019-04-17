@@ -7,7 +7,7 @@
 	;
 
 	aliases = {
-
+		"Checkpoint\Inspector": "AbstractInspector"
 	}
 
 	;

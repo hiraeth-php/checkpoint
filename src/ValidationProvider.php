@@ -29,10 +29,10 @@ class ValidationProvider implements Hiraeth\Provider
 	 *
 	 * @access public
 	 * @var object $instance The unprepared instance of the object
-	 * @param Application $app The application instance for which the provider operates
+	 * @param Hiraeth\Application $app The application instance for which the provider operates
 	 * @return object The prepared instance
 	 */
-	public function __invoke(object $instance, Application $app): object
+	public function __invoke(object $instance, Hiraeth\Application $app): object
 	{
 		$instance->setValidator($app->get('Respect\Validation\Validator'));
 
