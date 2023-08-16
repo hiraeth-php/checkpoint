@@ -18,7 +18,7 @@
     },
     "require": {
         "hiraeth/app": "^2.0",
-        "imarc/checkpoint": "^1.4"
+        "imarc/checkpoint": "^2.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.0"
