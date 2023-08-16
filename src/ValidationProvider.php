@@ -4,12 +4,19 @@ namespace Hiraeth\Checkpoint;
 
 use Hiraeth;
 use Checkpoint;
+use Respect\Validation\Validator;
 
 /**
  *
  */
 class ValidationProvider implements Hiraeth\Provider
 {
+	/**
+	 * @var Validator
+	 */
+	protected $validator = NULL;
+
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -28,7 +35,11 @@ class ValidationProvider implements Hiraeth\Provider
 	 */
 	public function __invoke(object $instance, Hiraeth\Application $app): object
 	{
-		$instance->setValidator($app->get('Respect\Validation\Validator'));
+		if (!$this->validator) {
+			$this->validator = new Validator();
+		}
+
+		$instance->setValidator($this->validator);
 
 		return $instance;
 	}
