@@ -17,7 +17,7 @@
         ]
     },
     "require": {
-        "hiraeth/app": "^2.0",
+        "hiraeth/app": "^3.0",
         "imarc/checkpoint": "^2.0"
     },
     "require-dev": {
