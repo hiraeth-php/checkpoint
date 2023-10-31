@@ -7,14 +7,14 @@ use Checkpoint;
 use Respect\Validation\Validator;
 
 /**
- *
+ * Provides requisite validator to validation classes
  */
 class ValidationProvider implements Hiraeth\Provider
 {
 	/**
 	 * @var Validator
 	 */
-	protected $validator = NULL;
+	protected $validator;
 
 
 	/**
@@ -35,7 +35,7 @@ class ValidationProvider implements Hiraeth\Provider
 	 */
 	public function __invoke(object $instance, Hiraeth\Application $app): object
 	{
-		if (!$this->validator) {
+		if (!$this->validator instanceof Validator) {
 			$this->validator = new Validator();
 		}
 
